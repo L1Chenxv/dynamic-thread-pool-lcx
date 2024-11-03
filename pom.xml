@@ -60,7 +60,7 @@
     </dependencyManagement>
 
     <build>
-        <finalName>dynamic-thread-pool</finalName>
+        <finalName>dynamic-thread-pool-lcx</finalName>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
