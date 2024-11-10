@@ -16,10 +16,8 @@
     </modules>
 
     <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-        <lombok.version>1.16.12</lombok.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <dynamic-thread-pool-spring-boot-starter-lcx.version>1.0-SNAPSHOT</dynamic-thread-pool-spring-boot-starter-lcx.version>
+        <org.mapstruct.version>1.5.5.Final</org.mapstruct.version>
     </properties>
 
     <parent>
@@ -31,6 +29,22 @@
 
     <dependencyManagement>
         <dependencies>
+
+            <!--二方包版本引入开始-->
+
+            <dependency>
+                <groupId>cn.lcx.middleware</groupId>
+                <artifactId>dynamic-thread-pool-spring-boot-starter-lcx</artifactId>
+                <version>${dynamic-thread-pool-spring-boot-starter-lcx.version}</version>
+            </dependency>
+
+            <!--二方包引入结束-->
+
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId>
+                <version>${org.mapstruct.version}</version>
+            </dependency>
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
@@ -66,6 +80,7 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 

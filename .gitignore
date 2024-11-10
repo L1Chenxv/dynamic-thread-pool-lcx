@@ -10,6 +10,8 @@ target/
 *.iml
 *.ipr
 
+**/resources/application-dev.yml
+
 ### Eclipse ###
 .apt_generated
 .classpath

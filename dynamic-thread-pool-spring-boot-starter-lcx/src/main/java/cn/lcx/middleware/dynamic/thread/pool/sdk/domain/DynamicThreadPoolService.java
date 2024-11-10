@@ -1,10 +1,10 @@
 package cn.lcx.middleware.dynamic.thread.pool.sdk.domain;
 
 import cn.lcx.middleware.dynamic.thread.pool.sdk.domain.model.entity.ThreadPoolConfigEntity;
+import cn.lcx.middleware.dynamic.thread.pool.sdk.utils.DynamicThreadPoolUtils;
 import com.alibaba.fastjson.JSON;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.NoArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -85,7 +85,6 @@ public class DynamicThreadPoolService implements IDynamicThreadPoolService{
         if (null == threadPoolExecutor) return;
 
         // 设置参数 「调整核心线程数和最大线程数」
-        threadPoolExecutor.setCorePoolSize(threadPoolConfigEntity.getCorePoolSize());
-        threadPoolExecutor.setMaximumPoolSize(threadPoolConfigEntity.getMaximumPoolSize());
+        DynamicThreadPoolUtils.updateDynamicThreadPoolConfig(threadPoolExecutor, threadPoolConfigEntity);
     }
 }
